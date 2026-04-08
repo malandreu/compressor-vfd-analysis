@@ -6,7 +6,6 @@
 <p align="center">
   <img src="images/Snapshot_Compressor_DWSIM.png" width="500"/>
 </p>
----
 
 ## Overview
 
