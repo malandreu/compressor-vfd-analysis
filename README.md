@@ -1,6 +1,3 @@
-# compressor-vfd-analysis
-
-
 # Centrifugal Gas Compressor — 20-Year VFD Techno-Economic Analysis
 
 > **Python extends what a process simulator cannot do alone.**  
