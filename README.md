@@ -49,10 +49,10 @@ Four compounding effects are coupled simultaneously across the 20-year horizon:
 
 ## Key findings
 
-- **Lapina underestimates power by 5.6% at year 20** — not because the method is wrong, but because suction density drifts +5.6% as MW increases. On a ~5 MW machine at late-field electricity prices, that is ~$350k/year of unaccounted energy.
-- **VFD savings are back-loaded**: minimal during plateau years, maximum during decline — exactly when electricity prices are highest and production margin is lowest.
-- **Simple payback is insensitive to the compression ratio** for the first four scenarios (6.5 years in all cases). NPV and IRR are the metrics that discriminate — the compression ratio required by the downstream system is the key parameter to pin down.
-- **DWSIM validation**: power within 2.4%, discharge temperature within 3°C across all 5 speed lines. Residual difference traces to independent Cp correlations, not EOS parameters (density agreement: 0.04%).
+- **Python-based thermodynamic model validated against DWSIM**: power within 2.4% and discharge temperature within 3°C across all five speed lines. The residual difference traces to independent Cp correlations, not EOS parameters — density agreement is 0.04%. The open-source PR-EOS implementation is sufficient for this gas system.
+- **Programmatic approach removes the need for simplified corrections**: the Lapina (1982) method holds suction density fixed at design conditions — adequate for a single operating point, but it accumulates a 5.6% power underestimation by year 20 as the gas gets heavier. Running rigorous EOS at every timestep costs nothing extra in a loop.
+- **Realistic asset lifecycle model**: production profile, efficiency degradation with overhaul recovery, and gas composition evolution coupled to cumulative production are all tracked simultaneously — giving an operating picture that a single design-point simulation cannot provide.
+- **Multiple KPIs for robust investment decisions**: NPV, IRR, simple payback, and discounted payback are reported together because they tell different parts of the story. Simple payback is insensitive to the compression ratio constraint; NPV and IRR are not — and that difference matters for capital allocation.
 
 ---
 
@@ -123,12 +123,6 @@ dwsim-compressor-vfd-analysis/
 
 6. **thermo** (MIT) — Python thermodynamics library  
    https://github.com/CalebBell/thermo
-
----
-
-## Related work
-
-- [dwsim-oilgas-surrogate](https://github.com/malandreu/dwsim-oilgas-surrogate) — GPR surrogate modelling and NSGA-II optimisation for a North Sea crude stabilisation plant
 
 ---
 
