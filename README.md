@@ -3,8 +3,9 @@
 > **Python extends what a process simulator cannot do alone.**  
 > 20-year techno-economic analysis of VFD vs fixed-speed centrifugal compressor using Python, open-source performance curves, and DWSIM validation
 
-![DWSIM Validation Flowsheet](images/Snapshot_Compressor_DWSIM.png)
-
+<p align="center">
+  <img src="images/Snapshot_Compressor_DWSIM.png" width="500"/>
+</p>
 ---
 
 ## Overview
